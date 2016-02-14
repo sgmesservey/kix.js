@@ -1,0 +1,3 @@
+cat src/ki.js src/ki.extend.js src/ajax.js src/pop.js > kix.js
+closure < kix.js > kix.min.js
+if [ -f kix.min.js ] ; then wc -c kix.min.js ; fi
