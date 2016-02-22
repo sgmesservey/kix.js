@@ -23,8 +23,8 @@
  * jsmodal.com/index.php
  */
 
-// IE DOM fix: define window.innerHeight and window.innerWidth
 !function(A,B,C,D,E,F,G,H,I,J) {
+	// IE DOM fix: define window.innerHeight and window.innerWidth
 	!A[F+H] &&
 	C[D](A,F+H, { get: function() { return B[E][G+H] } }) &&
 	C[D](A,F+I, { get: function() { return B[E][G+I] } });
@@ -34,8 +34,10 @@
 		var b = $.popup,w, o; // w = window, o = opaque
 		if (!b.i) {
 			o = $.elm('div').css({
-				display:'none', position:'absolute', top:'0', left:'0', width:'100%', height:'100%', filter:'alpha(opacity=70)', opacity:'.7', background:'#001'
+				display:'none', position:'absolute', top:'0', left:'0', width:'100%', height:'100%', background:'#001'
 			});
+			// IE-only css fix: check for ie, then set opacity/filter:alpha() as appropriate
+			A[F+H] ? o.css('opacity','.7') : o.css('filter','alpha(opacity=70');
 			w = $.elm('div').css({
 				display:'none', position:'absolute', border:'2px solid #111', zIndex:'1000', width:(a.wid) ? a.wid : '200px', overflow:'auto',
 				backgroundColor:(a.hbg) ? a.hbg : '#FFF'
@@ -48,6 +50,7 @@
 			w = b.w;
 			o = b.o;
 			w.html('');
+			w.css({backgroundColor:(a.hbg) ? a.hbg : '#FFF', width:(a.wid) ? a.wid : '200px'});
 		}
 		$(B).on('keypress',b.k);
 		b.f = /^f/.test(typeof a.fn) ? a.fn : null;

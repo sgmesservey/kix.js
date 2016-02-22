@@ -104,7 +104,7 @@ Utilities:
  - `removeAttr(name)`   : for each item, remove attribute `name`.
  - `before(a)`          : shorthand for `adjacentHTML("beforbegin",a)`
  - `after(a)`           : shorthand for `adjacentHTML("afterend",a)`
- - `css(name,value)`    : if `value` is absent, return the value of CSS attribute `name`; if present, set each items CSS attribute `name` to `value`. Normalized for IE8+ (float). **?**
+ - `css(a,b)`           : if `a` is an object, set each items CSS according the objects properties. If `a` and `b` are strings, set each items CSS propery `a` to `b`. Normalized for IE8 (float).
  - `first()`            : return the first item. **!**
  - `last()`             : return the last item.  **!**
  - `get(i)`             : return the i-th item.  **!**
@@ -139,6 +139,8 @@ If x and y are not provided, the popup is centered in the client area.
 The content is placed inside of a &lt;div&gt; tag with id `_POPH`.
 
 The close button is contained within a &lt;div&gt; tage with id `_POPX`.
+
+You can programmatically close the popup with `$.popup.close()`.
 
 There is no provision for multiple concurrent windows.
 
