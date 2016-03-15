@@ -152,7 +152,9 @@
 
 	// add CSS class 'a' to <this> ; IE8,9-compatible
 	$[B].addClass = function(a) {
-		return this.each(function(n) {
+		return this.each(function(n,b,c) {
+			b = n[C].split(' ');
+			for (c = 0; c < b.length; c++) if (b[c]===a) return;
 			n[C] += ' '+a
 		})
 	}
