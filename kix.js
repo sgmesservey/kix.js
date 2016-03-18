@@ -447,7 +447,7 @@ $.ajax = function(m,u,f,d,j,a,t,x,p) {
 	x = new XMLHttpRequest();
 	a = !(a === !1);
 	x.onreadystatechange = function() { (this.readyState == 4)&& f(this.status == 200 ? this.response : !1) };
-	if (d) d=p(d)||null;
+	if (d && /o/.test(typeof d)) d=p(d)||null;
 	if (/^p/i.test(m)) {
 		x.open("POST",u,a);
 		x.setRequestHeader('Content-Type',d.getAll ? 'multipart/form-data' : 'application/x-www-form-urlencoded');
