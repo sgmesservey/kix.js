@@ -267,6 +267,7 @@
 	// empty added by SGM 2-AUG-2015
 	$[B].empty = function() {
 		this.each(function(a) { while (a.firstChild) a.removeChild(a.firstChild) })
+		return this
 	}
 
 	// get/set element(s) html
