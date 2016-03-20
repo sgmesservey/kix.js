@@ -34,7 +34,7 @@
 		var b = $.popup,w, o; // w = window, o = opaque
 		if (!b.i) {
 			o = $.elm('div').css({
-				display:'none', position:'absolute', top:'0', left:'0', width:'100%', height:'100%', background:'#001'
+				display:'none', position:'absolute', top:'0', left:'0', width:A[F+H] + 'px', height:A[F+H], background:'#001'
 			});
 			// IE-only css fix: check for ie, then set opacity/filter:alpha() as appropriate
 			A[F+H] ? o.css('opacity','.7') : o.css('filter','alpha(opacity=70');
