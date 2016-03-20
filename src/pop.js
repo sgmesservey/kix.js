@@ -34,7 +34,7 @@
 		var b = $.popup,w, o; // w = window, o = opaque
 		if (!b.i) {
 			o = $.elm('div').css({
-				display:'none', position:'absolute', top:'0', left:'0', width:'100%', height:'100%', background:'#001'
+				display:'none', position:'absolute', top:'0', left:'0', width:A[F+H]+'px', height:A[F+H]+'px', background:'#001'
 			});
 			// IE-only css fix: check for ie, then set opacity/filter:alpha() as appropriate
 			A[F+H] ? o.css('opacity','.7') : o.css('filter','alpha(opacity=70');
@@ -65,9 +65,9 @@
 		w.append(tb).append(wr);
 		o.css({display:'block'});
 		w.css({display:'block'});
-		t.css({width:'' + (w[0].clientWidth - c[0].clientWidth) + 'px'});
-		w.css({top:(a.y) ? a.y : '' + (A.innerHeight / 2) - (w[0].offsetHeight / 2) + 'px',
-			left:(a.x) ? a.x : ''+ (A.innerWidth / 2) - (w[0].offsetWidth / 2) + 'px'});
+		t.css({width:'' + (w[0][G+H] - c[0][G+H]) + 'px'});
+		w.css({top:(a.y) ? a.y : '' + ((A[F+I] / 2) + (A.pageYOffset||B[E].scrollTop)) - (w[0].offsetHeight / 2) + 'px',
+			left:(a.x) ? a.x : ''+ ((A[F+H] / 2)+ (A.pageXOffset||B[E].scrollLeft)) - (w[0].offsetWidth / 2) + 'px'});
 		c.on('click',function() { $.popup.close(); });
 		a.drg &&(a.drg === !0)&&tb.on('mousedown',function (a) { b.dragOn(a); return !1; }).css('cursor','move');
 	}
