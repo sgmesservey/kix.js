@@ -509,7 +509,8 @@ $.param = function(obj, prefix) {
 		var b = $.popup,w, o; // w = window, o = opaque
 		if (!b.i) {
 			o = $.elm('div').css({
-				display:'none', position:'absolute', top:'0', left:'0', width:A[F+H]+'px', height:A[F+H]+'px', background:'#001'
+				display:'none', position:'absolute', top:'0', left:'0', width:A[F+H]+A.pageXOffset||B[E].scrollLeft+'px',
+				height:A[F+H]+A.pageYOffset||B[E].scrollTop+'px', background:'#001'
 			});
 			// IE-only css fix: check for ie, then set opacity/filter:alpha() as appropriate
 			A[F+H] ? o.css('opacity','.7') : o.css('filter','alpha(opacity=70');
