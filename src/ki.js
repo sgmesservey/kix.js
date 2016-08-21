@@ -14,10 +14,13 @@
 	b[g]||(b[g] = function(a) { return b[f]('.'+a); })
 
 	// improved selector (James Doyle)
+	// fixed a bug which converted a <select> into an array of it's options,
+	// instead of a decorated object (Steven G. Messervey) AUG-2016
 	function j(a,i,k) {
 		i = { '#': 'ById', '.': 'sByClassName', '@': 'sByName', '=': 'sByTagName'}[a[0]];
 		k = b[i?'getElement'+i:f](i?a.slice(1):a);
-		k = k ? k.length ? k : [k] : [];
+		//k = k ? k.length ? k : [k] : [];
+		k = k ? k.fill ? k : [k] : [];
 		return k;
 	}
 
