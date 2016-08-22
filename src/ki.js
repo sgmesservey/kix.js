@@ -20,7 +20,7 @@
 		i = { '#': 'ById', '.': 'sByClassName', '@': 'sByName', '=': 'sByTagName'}[a[0]];
 		k = b[i?'getElement'+i:f](i?a.slice(1):a);
 		//k = k ? k.length ? k : [k] : [];
-		k = k ? k.fill ? k : [k] : [];
+		k = k ? k.blur ? [k] : k : [];
 		return k;
 	}
 
